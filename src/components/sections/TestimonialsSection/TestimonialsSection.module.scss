@@ -1,0 +1,18 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; // Mobile: 1 column
+  gap: $space-6;
+  
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
+    gap: $space-8;
+  }
+  
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr); // Desktop: 3 columns
+    gap: $space-8;
+  }
+}

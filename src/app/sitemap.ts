@@ -1,0 +1,33 @@
+import { MetadataRoute } from 'next';
+import { content } from '@/data/content';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://soniadental.com'; // In a real app, load from env var
+
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+  ];
+}

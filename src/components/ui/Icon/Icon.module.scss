@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as *;
+
+.root {
+  display: inline-flex;
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.sm {
+  width: $icon-size-sm;
+  height: $icon-size-sm;
+}
+
+.md {
+  width: $icon-size-md;
+  height: $icon-size-md;
+}
+
+.lg {
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+}
+
+.xl {
+  width: $icon-size-xl;
+  height: $icon-size-xl;
+}

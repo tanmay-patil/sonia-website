@@ -1,0 +1,48 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-bottom: $space-10;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: $font-family-heading;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+
+.title {
+  font-family: $font-family-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: var(--color-text-primary);
+  line-height: $line-height-tight;
+  
+  @include tablet {
+    font-size: $font-size-4xl;
+  }
+}
+
+.description {
+  font-family: $font-family-body;
+  font-size: $font-size-lg;
+  color: var(--color-text-secondary);
+  line-height: $line-height-relaxed;
+  max-width: 600px;
+}

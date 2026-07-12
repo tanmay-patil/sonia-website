@@ -1,0 +1,14 @@
+---
+description: ADA/WCAG 2.1 AA accessibility compliance rules
+globs: ["src/**/*.tsx"]
+alwaysApply: false
+---
+
+# Accessibility Rules
+
+- **Semantic HTML**: Use proper elements (`<button>`, `<a>`, `<nav>`, `<dialog>`). No `<div onClick>`.
+- **Keyboard Navigation**: Interactive elements must be focusable via `Tab`. Escape key must close modals and menus.
+- **Focus Management**: Focus states must be visible. Use `--color-focus-ring` (never `outline: none` without a fallback).
+- **ARIA Attributes**: Use appropriate ARIA roles (`aria-label`, `aria-expanded`, `aria-hidden`) where visual cues are not sufficient for screen readers.
+- **Alt Text**: All `<Image>` elements must have descriptive `alt` text provided from `src/data/content.ts`.
+- **Reference**: See Accessibility section in `CONVENTIONS.md`.

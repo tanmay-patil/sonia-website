@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  position: absolute;
+  top: -100px;
+  left: $space-4;
+  z-index: 9999;
+  padding: $space-3 $space-5;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-family: $font-family-body;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius-md;
+  box-shadow: var(--shadow-lg);
+  transition: top $transition-fast;
+  
+  @include focus-ring;
+  
+  &:focus {
+    top: $space-4;
+  }
+}

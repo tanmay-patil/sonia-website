@@ -1,0 +1,61 @@
+:root {
+  // Light Theme (Default)
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F0F0F0;
+  
+  --color-primary: #1B6B5A;
+  --color-primary-light: #238C73;
+  --color-primary-dark: #145242;
+  
+  --color-accent: #D4A373;
+  --color-accent-light: #E3C4A8;
+  
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #7A7A7A;
+  --color-text-inverse: #FFFFFF;
+  
+  --color-border: #E5E5E5;
+  --color-border-hover: #D0D0D0;
+  
+  --color-success: #2D8F6F;
+  --color-error: #D64545;
+  
+  --color-focus-ring: rgba(27, 107, 90, 0.5);
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  // Dark Theme Overrides
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-surface-hover: #2A2A2A;
+  
+  --color-primary: #2DAA8A;
+  --color-primary-light: #3CC4A0;
+  --color-primary-dark: #1B8B6E;
+  
+  --color-accent: #E0B88A;
+  --color-accent-light: #EDD4B8;
+  
+  --color-text-primary: #F0F0EC;
+  --color-text-secondary: #A0A09A;
+  --color-text-muted: #70706A;
+  --color-text-inverse: #121212;
+  
+  --color-border: #333333;
+  --color-border-hover: #444444;
+  
+  --color-success: #3CB88A;
+  --color-error: #E86060;
+  
+  --color-focus-ring: rgba(45, 170, 138, 0.5);
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+}

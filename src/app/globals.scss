@@ -1,0 +1,92 @@
+@use '../styles/theme';
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-body;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: $line-height-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  
+  @include focus-ring;
+}
+
+// Utility Classes
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  padding-top: $space-12;
+  padding-bottom: $space-12;
+  
+  @include tablet {
+    padding-top: $space-16;
+    padding-bottom: $space-16;
+  }
+}
+
+// Global scrollbar styling
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 6px;
+  border: 3px solid var(--color-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-border-hover);
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,49 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  width: 100%;
+  padding: $space-16 0; // Mobile padding
+  transition: background-color $transition-normal;
+  
+  @include tablet {
+    padding: $space-24 0; // Tablet padding
+  }
+  
+  @include desktop {
+    padding: $space-32 0; // Desktop padding
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $space-4; // Mobile horizontal padding
+  
+  @include tablet {
+    padding: 0 $space-8; // Tablet horizontal padding
+  }
+  
+  @include desktop {
+    padding: 0 $space-12; // Desktop horizontal padding
+  }
+}
+
+.default {
+  background-color: var(--color-background);
+}
+
+.muted {
+  background-color: var(--color-surface);
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  
+  // Inverse text colors for children when inside primary variant
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: var(--color-text-inverse);
+  }
+}

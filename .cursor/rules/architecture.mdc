@@ -1,0 +1,14 @@
+---
+description: Core architecture rules — references CONVENTIONS.md
+globs: ["src/**/*.tsx", "src/**/*.ts"]
+alwaysApply: true
+---
+
+# Architecture Rules
+
+- **200-Line File Limit**: No `.tsx` or `.ts` file may exceed 200 lines. Break into smaller modules.
+- **Atomic Design**: Structure components in `src/components/ui/` (atoms), `src/components/composed/` (molecules), and `src/components/sections/` (organisms).
+- **TypeScript Strictness**: No `any`. Explicitly type all component props. 
+- **Barrel Exports**: Every component directory must have an `index.ts` exporting its contents. Import via the directory path.
+- **Zero Lint Suppression**: Never use `eslint-disable`, `@ts-ignore`, `@ts-expect-error`, or `// @ts-nocheck`.
+- **Reference**: Always follow rules in `CONVENTIONS.md` and use boilerplate from `COMPONENT_TEMPLATE.md`.

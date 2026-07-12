@@ -1,0 +1,16 @@
+---
+description: SCSS and theming rules — all values must use variables
+globs: ["src/**/*.scss", "src/**/*.module.scss"]
+alwaysApply: true
+---
+
+# Styling & Theming Rules
+
+- **Mobile-First Design**: Start styling for mobile screens by default. Use `@include tablet`, `@include desktop` for larger screens. 100% mobile responsiveness is mandatory.
+- **SCSS Variables & Theme Tokens**: Every value in `.module.scss` MUST use a variable from `_variables.scss`. 
+- **Colors**: Colors MUST use `var(--color-...)` for theme support. Never use hex/rgb codes or `$color-...` directly in component styles.
+- **Structure**: Every component must use a `.root` class as its outermost wrapper.
+- **No Inline Styles**: Do not use the `style` prop in React.
+- **Responsive Mixins**: Use SCSS mixins (`@include tablet`, `@include desktop`) for media queries.
+- **Imports**: Always use `@use 'variables' as *;` and `@use 'mixins' as *;`. Never use `@import` (deprecated) or long relative paths.
+- **Reference**: Follow styling rules detailed in `CONVENTIONS.md`.

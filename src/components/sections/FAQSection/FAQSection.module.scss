@@ -1,0 +1,54 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: $space-10;
+  
+  @include tablet {
+    gap: $space-12;
+  }
+  
+  @include desktop {
+    flex-direction: row;
+    gap: $space-16;
+    align-items: flex-start;
+  }
+}
+
+.headerColumn {
+  width: 100%;
+  
+  @include desktop {
+    width: 33.333%;
+    position: sticky;
+    top: $space-32; // Stick to top on desktop scroll
+  }
+}
+
+.heading {
+  margin-bottom: 0; // Remove default bottom margin from SectionHeading
+  
+  // Enforce left alignment on mobile/tablet even if passed as prop, 
+  // or override the prop's align class if needed.
+  // Actually, align="left" is passed, so it's already left-aligned.
+}
+
+.faqColumn {
+  width: 100%;
+  
+  @include desktop {
+    width: 66.666%;
+  }
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border-radius: $border-radius-xl;
+  padding: 0 $space-6;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}

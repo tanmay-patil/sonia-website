@@ -1,0 +1,140 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  padding-top: $space-24; // Extra padding for fixed header on mobile
+  
+  @include tablet {
+    padding-top: $space-32;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+  align-items: center;
+  
+  @include tablet {
+    // Keep stack but adjust gap
+    gap: $space-16;
+  }
+  
+  @include desktop {
+    flex-direction: row; // Side by side on desktop
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center; // Center text on mobile/tablet
+  width: 100%;
+  
+  @include desktop {
+    flex: 1;
+    text-align: left; // Left align on desktop
+    max-width: 600px;
+  }
+}
+
+.headline {
+  font-family: $font-family-heading;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-black;
+  color: var(--color-text-primary);
+  line-height: $line-height-tight;
+  margin-bottom: $space-6;
+  
+  @include tablet {
+    font-size: 3.5rem; // Larger on tablet
+  }
+  
+  @include desktop {
+    font-size: $font-size-5xl; // Even larger on desktop
+  }
+}
+
+.subheadline {
+  font-family: $font-family-body;
+  font-size: $font-size-lg;
+  color: var(--color-text-secondary);
+  line-height: $line-height-relaxed;
+  margin-bottom: $space-8;
+  
+  @include tablet {
+    font-size: $font-size-xl;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%; // Constrain width on tablet for readability
+  }
+  
+  @include desktop {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column; // Stack buttons on mobile
+  gap: $space-4;
+  width: 100%;
+  
+  @include tablet {
+    flex-direction: row; // Side-by-side buttons on tablet
+    justify-content: center;
+  }
+  
+  @include desktop {
+    justify-content: flex-start;
+  }
+}
+
+.button {
+  width: 100%; // Full width buttons on mobile
+  
+  @include tablet {
+    width: auto; // Auto width on tablet+
+    min-width: 160px;
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  
+  @include desktop {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4 / 3; // Mobile aspect ratio
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  border-radius: $border-radius-2xl;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  
+  @include tablet {
+    aspect-ratio: 16 / 9; // Wider aspect ratio on tablet
+  }
+  
+  @include desktop {
+    width: 90%;
+    aspect-ratio: 4 / 5; // Portrait aspect ratio on desktop to fit side-by-side
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 100%);
+}
