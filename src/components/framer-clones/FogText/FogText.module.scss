@@ -1,0 +1,91 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  --fog-shadow-spread: 12px;
+  display: block;
+  margin: 0;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+
+  &[data-glow='medium'] {
+    --fog-shadow-spread: 16px;
+  }
+
+  &[data-glow='high'] {
+    --fog-shadow-spread: 22px;
+  }
+
+  &[data-density='heavy'] {
+    --fog-shadow-spread: 26px;
+  }
+}
+
+.left {
+  text-align: left;
+
+  .line {
+    justify-content: flex-start;
+  }
+}
+
+.center {
+  text-align: center;
+
+  .line {
+    justify-content: center;
+  }
+}
+
+.right {
+  text-align: right;
+
+  .line {
+    justify-content: flex-end;
+  }
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+  gap: $space-1;
+  width: 100%;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 1em;
+}
+
+.charCell {
+  position: relative;
+  display: inline-block;
+  white-space: pre;
+}
+
+.fogChar {
+  position: absolute;
+  inset: 0;
+  color: var(--color-fog-glow);
+  text-shadow:
+    0 0 var(--fog-shadow-spread) var(--color-fog-glow),
+    0 0 calc(var(--fog-shadow-spread) * 1.6) var(--color-fog-glow-soft);
+  pointer-events: none;
+  user-select: none;
+}
+
+.textChar {
+  position: relative;
+  color: inherit;
+}
+
+.space {
+  display: inline-block;
+  width: 0.28em;
+}
