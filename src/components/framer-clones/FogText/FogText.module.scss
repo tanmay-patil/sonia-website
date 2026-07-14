@@ -6,10 +6,6 @@
   display: block;
   margin: 0;
   width: 100%;
-  color: inherit;
-  font: inherit;
-  letter-spacing: inherit;
-  line-height: inherit;
 
   &[data-glow='medium'] {
     --fog-shadow-spread: 16px;
@@ -73,6 +69,8 @@
   position: absolute;
   inset: 0;
   color: var(--color-fog-glow);
+  font: inherit;
+  letter-spacing: inherit;
   text-shadow:
     0 0 var(--fog-shadow-spread) var(--color-fog-glow),
     0 0 calc(var(--fog-shadow-spread) * 1.6) var(--color-fog-glow-soft);
@@ -83,6 +81,8 @@
 .textChar {
   position: relative;
   color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 .space {
