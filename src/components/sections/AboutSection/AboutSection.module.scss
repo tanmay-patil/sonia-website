@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   gap: $space-12;
-  
+
   @include tablet {
     gap: $space-16;
   }
-  
+
   @include desktop {
     flex-direction: row;
     align-items: center;
@@ -18,7 +18,7 @@
 
 .imageColumn {
   width: 100%;
-  
+
   @include desktop {
     width: 50%;
   }
@@ -26,44 +26,49 @@
 
 .imagePlaceholder {
   width: 100%;
-  aspect-ratio: 1; // Square on mobile
-  background: linear-gradient(45deg, var(--color-surface-hover) 0%, var(--color-border) 100%);
-  border-radius: $border-radius-2xl;
+  aspect-ratio: 1;
+  background-color: var(--color-surface);
+  border-radius: $border-radius-xl;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  
+  border: 1px solid var(--color-border);
+
   @include tablet {
-    aspect-ratio: 4/3; // Slightly wider on tablet
+    aspect-ratio: 4 / 3;
   }
-  
+
   @include desktop {
-    aspect-ratio: 3/4; // Portrait on desktop
+    aspect-ratio: 3 / 4;
   }
 }
 
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: linear-gradient(
+    to top,
+    rgba(var(--color-background-rgb), 0.08) 0%,
+    transparent 50%
+  );
 }
 
 .badge {
   position: absolute;
   bottom: $space-6;
   left: $space-6;
-  background-color: var(--color-surface);
+  background-color: var(--color-background);
   color: var(--color-text-primary);
-  padding: $space-3 $space-6;
+  padding: $space-2 $space-4;
   border-radius: $border-radius-full;
+  border: 1px solid var(--color-border);
   font-family: $font-family-heading;
-  font-weight: $font-weight-bold;
-  box-shadow: var(--shadow-lg);
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
 }
 
 .contentColumn {
   width: 100%;
-  
+
   @include desktop {
     width: 50%;
     padding-left: $space-8;
@@ -80,12 +85,12 @@
 
 .stats {
   display: grid;
-  grid-template-columns: 1fr; // Stacked on mobile
+  grid-template-columns: 1fr;
   gap: $space-6;
   border-top: 1px solid var(--color-border);
   padding-top: $space-8;
-  
+
   @include tablet {
-    grid-template-columns: repeat(3, 1fr); // 3 cols on tablet/desktop
+    grid-template-columns: repeat(3, 1fr);
   }
 }

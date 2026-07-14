@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Inter } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import './globals.scss';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Footer } from '@/components/sections/Footer';
@@ -7,15 +7,9 @@ import { Header } from '@/components/sections/Header';
 import { SkipLink } from '@/components/ui/SkipLink';
 import { content } from '@/data/content';
 
-const dmSans = DM_Sans({
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-outfit',
   display: 'swap',
 });
 
@@ -46,7 +40,7 @@ export default function RootLayout({
         {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Needed for theme initialization before hydration */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${dmSans.variable} ${inter.variable}`}>
+      <body className={outfit.variable}>
         <ThemeProvider>
           <SkipLink />
           <Header />

@@ -21,19 +21,19 @@
 .eyebrow {
   font-family: $font-family-heading;
   font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
 }
 
 .title {
   font-family: $font-family-heading;
   font-size: $font-size-3xl;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
   color: var(--color-text-primary);
   line-height: $line-height-tight;
-  
+  letter-spacing: -0.03em;
+
   @include tablet {
     font-size: $font-size-4xl;
   }
@@ -44,5 +44,5 @@
   font-size: $font-size-lg;
   color: var(--color-text-secondary);
   line-height: $line-height-relaxed;
-  max-width: 600px;
+  max-width: 36rem;
 }

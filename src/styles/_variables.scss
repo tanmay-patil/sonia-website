@@ -6,9 +6,9 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;
 
-// 2. Typography
-$font-family-heading: var(--font-dm-sans), sans-serif;
-$font-family-body: var(--font-inter), sans-serif;
+// 2. Typography — Outfit: clean, geometric, Apple-adjacent
+$font-family-heading: var(--font-outfit), sans-serif;
+$font-family-body: var(--font-outfit), sans-serif;
 
 $font-size-xs: 0.75rem;     // 12px
 $font-size-sm: 0.875rem;    // 14px
@@ -19,6 +19,7 @@ $font-size-2xl: 2rem;       // 32px
 $font-size-3xl: 2.5rem;     // 40px
 $font-size-4xl: 3rem;       // 48px
 $font-size-5xl: 4rem;       // 64px
+$font-size-6xl: 5rem;       // 80px
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -45,13 +46,13 @@ $space-20: 10rem;   // 160px
 $space-24: 12rem;   // 192px
 $space-32: 16rem;   // 256px
 
-// 4. Border Radius
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
-$border-radius-xl: 16px;
-$border-radius-2xl: 24px;
-$border-radius-full: 9999px;
+// 4. Border Radius — restrained, Apple-like
+$border-radius-sm: 6px;
+$border-radius-md: 10px;
+$border-radius-lg: 14px;
+$border-radius-xl: 18px;
+$border-radius-2xl: 22px;
+$border-radius-full: 980px;
 
 // 5. Layout Max Width
 $container-max-width: 1200px;
@@ -76,3 +77,10 @@ $transition-fast: 150ms ease;
 $transition-normal: 300ms ease;
 $transition-slow: 500ms ease;
 $transition-bounce: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// 9. Control sizes
+$control-height-sm: 2rem;      // 32px
+$control-height-md: 2.75rem;   // 44px
+$control-height-lg: 3.5rem;    // 56px
+$control-height-icon: 2.5rem;  // 40px
+

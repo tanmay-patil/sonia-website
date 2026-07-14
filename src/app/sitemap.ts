@@ -1,5 +1,4 @@
-import { MetadataRoute } from 'next';
-import { content } from '@/data/content';
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://soniadental.com'; // In a real app, load from env var

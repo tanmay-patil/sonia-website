@@ -2,12 +2,12 @@
 @use '../../../styles/mixins' as *;
 
 .root {
-  background-color: var(--color-surface);
+  background-color: var(--color-background);
   border-top: 1px solid var(--color-border);
   padding: $space-16 0 $space-8;
-  
+
   @include tablet {
-    padding: $space-24 0 $space-8;
+    padding: $space-20 0 $space-8;
   }
 }
 
@@ -15,11 +15,11 @@
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $space-4;
-  
+
   @include tablet {
     padding: 0 $space-8;
   }
-  
+
   @include desktop {
     padding: 0 $space-12;
   }
@@ -27,16 +27,16 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr; // Mobile: 1 col stacked
+  grid-template-columns: 1fr;
   gap: $space-12;
   margin-bottom: $space-16;
-  
+
   @include tablet {
-    grid-template-columns: repeat(2, 1fr); // Tablet: 2 cols
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @include desktop {
-    grid-template-columns: 2fr 1fr 1fr; // Desktop: 3 cols
+    grid-template-columns: 2fr 1fr 1fr;
     gap: $space-16;
   }
 }
@@ -52,19 +52,20 @@
   align-items: center;
   gap: $space-2;
   text-decoration: none;
-  
+
   @include focus-ring;
 }
 
 .logoIcon {
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .logoText {
   font-family: $font-family-heading;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-black;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
   color: var(--color-text-primary);
+  letter-spacing: -0.02em;
 }
 
 .description {
@@ -72,12 +73,12 @@
   font-size: $font-size-base;
   color: var(--color-text-secondary);
   line-height: $line-height-relaxed;
-  max-width: 400px;
+  max-width: 24rem;
 }
 
 .socials {
   display: flex;
-  gap: $space-4;
+  gap: $space-3;
   margin-top: $space-2;
 }
 
@@ -85,32 +86,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: $control-height-icon;
+  height: $control-height-icon;
   border-radius: $border-radius-full;
-  background-color: var(--color-background);
+  background-color: transparent;
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
-  transition: all $transition-fast;
-  
+  transition: color $transition-fast, border-color $transition-fast,
+    background-color $transition-fast;
+
   &:hover {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    background-color: var(--color-primary-light);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-hover);
+    background-color: var(--color-surface-hover);
   }
-  
+
   @include focus-ring;
 }
 
 .heading {
   font-family: $font-family-heading;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
   color: var(--color-text-primary);
-  margin-bottom: $space-6;
+  margin-bottom: $space-5;
+  letter-spacing: -0.01em;
 }
 
-.linksCol, .contactCol {
+.linksCol,
+.contactCol {
   display: flex;
   flex-direction: column;
 }
@@ -128,11 +132,11 @@
   text-decoration: none;
   transition: color $transition-fast;
   width: fit-content;
-  
+
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-text-primary);
   }
-  
+
   @include focus-ring;
 }
 
@@ -153,8 +157,8 @@
 }
 
 .contactIcon {
-  color: var(--color-primary);
-  margin-top: 2px; // Align icon with top of text
+  color: var(--color-text-muted);
+  margin-top: $space-1;
 }
 
 .bottom {
@@ -164,14 +168,15 @@
   gap: $space-4;
   padding-top: $space-8;
   border-top: 1px solid var(--color-border);
-  
+
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-.copyright, .legalLink {
+.copyright,
+.legalLink {
   font-family: $font-family-body;
   font-size: $font-size-sm;
   color: var(--color-text-muted);
@@ -185,10 +190,10 @@
 .legalLink {
   text-decoration: none;
   transition: color $transition-fast;
-  
+
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-text-primary);
   }
-  
+
   @include focus-ring;
 }

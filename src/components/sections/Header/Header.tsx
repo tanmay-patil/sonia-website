@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { NavLink } from '@/components/composed/NavLink';
 import { Button } from '@/components/ui/Button';
 import { Icon } from '@/components/ui/Icon';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { content } from '@/data/content';
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -22,13 +24,11 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to trigger this effect when pathname changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: close menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -50,12 +50,10 @@ export const Header = () => {
     >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <Icon name="Smile" size="md" className={styles.logoIcon} />
-          <span className={styles.logoText}>Sonia Dental</span>
+          <span className={styles.logoText}>{content.global.clinicName}</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.desktopNav}>
+        <nav className={styles.desktopNav} aria-label="Primary">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} exact={link.href === '/'}>
               {link.label}
@@ -64,23 +62,23 @@ export const Header = () => {
         </nav>
 
         <div className={styles.actions}>
+          <ThemeToggle />
           <Button className={styles.bookButton}>Book Now</Button>
-
           <button
             type="button"
             className={styles.mobileMenuButton}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
           >
             <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} size="md" />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
-          <nav className={styles.mobileNav}>
+          <nav className={styles.mobileNav} aria-label="Mobile">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -91,6 +89,9 @@ export const Header = () => {
                 {link.label}
               </NavLink>
             ))}
+            <Button className={styles.mobileBook}>
+              {content.hero.primaryCta}
+            </Button>
           </nav>
         </div>
       )}

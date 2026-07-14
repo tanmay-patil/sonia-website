@@ -7,20 +7,20 @@
   padding: $space-1 $space-3;
   font-family: $font-family-body;
   font-size: $font-size-xs;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.02em;
   border-radius: $border-radius-full;
   white-space: nowrap;
 }
 
 .primary {
-  background-color: var(--color-primary-light);
-  color: var(--color-text-inverse);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
 }
 
 .success {
-  background-color: var(--color-success);
+  background-color: var(--color-text-primary);
   color: var(--color-text-inverse);
 }
 

@@ -1,0 +1,22 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $control-height-icon;
+  height: $control-height-icon;
+  border-radius: $border-radius-full;
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  transition: background-color $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+  }
+
+  @include focus-ring;
+}

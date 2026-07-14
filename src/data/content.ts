@@ -2,6 +2,10 @@ export const content = {
   global: {
     clinicName: 'Sonia Dental',
     tagline: 'Modern Dentistry for a Healthier Smile',
+    themeToggle: {
+      lightLabel: 'Switch to light mode',
+      darkLabel: 'Switch to dark mode',
+    },
     seo: {
       title: 'Sonia Dental | Premium Dental Care',
       description:
@@ -9,9 +13,9 @@ export const content = {
     },
   },
   hero: {
-    headline: 'Your Smile, Our Masterpiece',
+    headline: 'Sonia Dental',
     subheadline:
-      'Experience premium dental care in a relaxing environment. We combine state-of-the-art technology with compassionate care.',
+      'Precise, calm dental care. Book online in minutes — or explore how we can help.',
     primaryCta: 'Book an Appointment',
     secondaryCta: 'Our Services',
   },
